@@ -1,18 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+My personal portfolio website built with Next.js and Tailwind CSS.
+
+## Environment Variables
+
+The following environment variables are required to run this application:
+
+```
+RESEND_API_KEY=your_resend_api_key_here
+```
+
+You must add your Resend API key to the environment variables on your hosting platform (e.g., Vercel) for the contact form to work properly.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Create a `.env.local` file with the required environment variables
+4. Run the development server: `npm run dev`
+
+## Build
+
+To build the application for production:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
+
+## Technology Stack
+
+- Next.js 15
+- Tailwind CSS
+- TypeScript
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
