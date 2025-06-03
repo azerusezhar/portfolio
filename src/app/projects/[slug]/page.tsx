@@ -7,8 +7,40 @@ import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+// Define TypeScript interfaces for project data
+interface TechStack {
+  frontend?: string[];
+  backend?: string[];
+  database?: string[];
+  tools?: string[];
+  authentication?: string[];
+  dataVisualization?: string[];
+  deployment?: string[];
+}
+
+interface Project {
+  title: string;
+  description: string;
+  fullDescription: string;
+  features: string[];
+  technologies: string[];
+  techStack: TechStack;
+  developmentStatus?: string[];
+  roadmap?: string[];
+  challenges: string;
+  image: string;
+  images: string[];
+  tags: string[];
+  githubUrl: string;
+  liveUrl: string;
+  contributors?: string[];
+  appStructure?: string[] | Record<string, string[]>;
+}
+
+type ProjectsData = Record<string, Project>;
+
 // Complete project data
-const projectsData = {
+const projectsData: ProjectsData = {
   "kasir-kita": {
     title: "Kasir Kita",
     description: "Point of sale application with frontend and backend systems. Built with JavaScript.",
@@ -131,7 +163,7 @@ const projectsData = {
 export default function ProjectDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
-  const [project, setProject] = useState<Record<string, unknown> | null>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [showLargeImage, setShowLargeImage] = useState(false);
 
@@ -205,7 +237,7 @@ export default function ProjectDetailPage() {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag: string, index: number) => (
+                  {project.tags.map((tag, index) => (
                     <span 
                       key={index} 
                       className="text-sm bg-[#242424] text-gray-300 px-3 py-1 rounded-md
@@ -280,7 +312,7 @@ export default function ProjectDetailPage() {
                   <div className="mt-8">
                     <h3 className="text-xl text-white font-medium mb-4">✨ Features</h3>
                     <ul className="space-y-2">
-                      {project.features.map((feature: string, index: number) => (
+                      {project.features.map((feature, index) => (
                         <li key={index} className="flex items-start">
                           <span className="text-gray-500 mr-2">{feature.includes(":") ? "" : "•"}</span>
                           <span>{feature}</span>
@@ -294,7 +326,7 @@ export default function ProjectDetailPage() {
                       <h3 className="text-xl text-white font-medium mb-4">📂 App Structure</h3>
                       {Array.isArray(project.appStructure) ? (
                         <div className="bg-[#191919] rounded-md p-4 font-mono text-sm">
-                          {project.appStructure.map((line: string, index: number) => (
+                          {project.appStructure.map((line, index) => (
                             <div key={index} className="whitespace-pre">{line}</div>
                           ))}
                         </div>
@@ -304,7 +336,7 @@ export default function ProjectDetailPage() {
                             <div key={section} className="mb-4">
                               <h4 className="text-white text-lg mb-2 capitalize">{section}</h4>
                               <div className="bg-[#191919] rounded-md p-4 font-mono text-sm">
-                                {(lines as string[]).map((line: string, i: number) => (
+                                {(lines as string[]).map((line, i) => (
                                   <div key={i} className="whitespace-pre">{line}</div>
                                 ))}
                               </div>
@@ -319,7 +351,7 @@ export default function ProjectDetailPage() {
                     <div className="mt-8">
                       <h3 className="text-xl text-white font-medium mb-4">⚙️ Development Status</h3>
                       <ul className="space-y-2">
-                        {project.developmentStatus.map((status: string, idx: number) => (
+                        {project.developmentStatus.map((status, idx) => (
                           <li key={idx} className="flex items-center">
                             <span className="mr-2">{status.includes("✅") ? "" : ""}</span>
                             <span>{status}</span>
@@ -333,7 +365,7 @@ export default function ProjectDetailPage() {
                     <div className="mt-8">
                       <h3 className="text-xl text-white font-medium mb-4">📋 Roadmap</h3>
                       <ul className="space-y-2">
-                        {project.roadmap.map((item: string, idx: number) => (
+                        {project.roadmap.map((item, idx) => (
                           <li key={idx} className="flex items-start">
                             <span className="text-gray-500 mr-2">•</span>
                             <span>{item}</span>
@@ -347,7 +379,7 @@ export default function ProjectDetailPage() {
                     <div className="mt-8">
                       <h3 className="text-xl text-white font-medium mb-4">👥 Contributors</h3>
                       <ul className="space-y-2">
-                        {project.contributors.map((contributor: string, idx: number) => (
+                        {project.contributors.map((contributor, idx) => (
                           <li key={idx}>{contributor}</li>
                         ))}
                       </ul>
@@ -375,7 +407,7 @@ export default function ProjectDetailPage() {
                       <div key={category} className="w-full mb-4">
                         <h4 className="text-white capitalize mb-2 text-sm opacity-70">{category}</h4>
                         <div className="flex flex-wrap gap-2">
-                          {(techs as string[]).map((tech: string, idx: number) => (
+                          {(techs as string[]).map((tech, idx) => (
                             <span 
                               key={idx}
                               className="text-sm bg-[#242424] text-gray-300 px-3 py-1 rounded-md
