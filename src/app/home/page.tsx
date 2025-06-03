@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from "@/components/footer";
-import { ArrowDownRight, ArrowRight, Github, ExternalLink } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -40,14 +40,14 @@ export default function HomePage() {
                             Aspiring Web & Mobile Developer | Open to Collaboration
                         </div>
                         <h1 className="text-5xl text-white font-bold mb-4 mt-8 font-satoshi">
-                            Hey, I'm Azerus.
+                            Hey, I&apos;m Azerus.
                         </h1>
                         <h1 className="text-5xl text-white font-bold mb-4 font-satoshi">
-                            I'm a Web & Mobile Developer
+                            I&apos;m a Web & Mobile Developer
                         </h1>
                         <p className="text-gray-400 mb-4 font-sans max-w-xl">
                             I craft innovative web and mobile applications that deliver
-                            seamless user experiences. Let's collaborate and build something
+                            seamless user experiences. Let&apos;s collaborate and build something
                             amazing together!
                         </p>
                         <div className="flex gap-4 mb-4">

@@ -72,4 +72,6 @@ const CardSkill: React.FC = React.memo(() => {
   );
 });
 
+CardSkill.displayName = "CardSkill";
+
 export default CardSkill;

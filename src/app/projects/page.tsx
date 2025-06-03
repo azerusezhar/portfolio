@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from "@/components/footer";
-import { ArrowDownRight, ArrowRight, Github, ExternalLink } from "lucide-react";
+import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
           {/* Contact CTA */}
           <section className="mt-16 bg-[#1a1a1a] p-8 rounded-2xl border border-gray-700 text-center">
             <h2 className="text-2xl font-satoshi font-bold text-white mb-4">Interested in working together?</h2>
-            <p className="text-gray-400 mb-6">I'm always open to discussing new projects and opportunities.</p>
+            <p className="text-gray-400 mb-6">I&apos;m always open to discussing new projects and opportunities.</p>
             <Link 
               href="/contact"
               className="text-black px-6 py-3 rounded-md bg-[#F6F6F6] font-semibold font-sans text-sm border 

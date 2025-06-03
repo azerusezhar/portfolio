@@ -40,7 +40,7 @@ export default function AboutClient() {
             <div className="w-full border-t border-gray-700 my-8"></div>
 
             <div className="text-gray-400 font-sans text-[1.095rem] text-justify my-8">
-                <h1 className="text-3xl text-white font-medium">Hello, I'm Azerus</h1>
+                <h1 className="text-3xl text-white font-medium">Hello, I&apos;m Azerus</h1>
               <p className="my-4">
                 a student at SMKN 8 Malang, currently
                 pursuing my education in the Computer Science and Software
@@ -59,8 +59,8 @@ export default function AboutClient() {
               </p>
               <p className="my-4">
                 I enjoy collaborating with others to build engaging and
-                beneficial projects. If you have an idea or a project you'd like
-                to develop, let's work together to bring it to life!
+                beneficial projects. If you have an idea or a project you&apos;d like
+                to develop, let&apos;s work together to bring it to life!
               </p>
             </div>
           </section>

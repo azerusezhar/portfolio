@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, notFound } from "next/navigation";
-import { ArrowLeft, Github, ExternalLink, ChevronRight, X } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, X } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
@@ -131,7 +131,7 @@ const projectsData = {
 export default function ProjectDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
-  const [project, setProject] = useState<any>(null);
+  const [project, setProject] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
   const [showLargeImage, setShowLargeImage] = useState(false);
 
@@ -165,9 +165,6 @@ export default function ProjectDetailPage() {
   if (!project) {
     return notFound();
   }
-  
-  // Flatten tech stack for display
-  const techStackItems = Object.values(project.techStack || {}).flat();
 
   return (
     <div className="flex flex-row h-screen w-full bg-[#121212] overflow-hidden">

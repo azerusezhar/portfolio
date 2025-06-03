@@ -52,4 +52,6 @@ const ProjectExperienceCard: React.FC = React.memo(() => {
   );
 });
 
+ProjectExperienceCard.displayName = "ProjectExperienceCard";
+
 export default ProjectExperienceCard;
